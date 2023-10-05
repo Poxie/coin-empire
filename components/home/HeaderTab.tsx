@@ -15,7 +15,7 @@ export default function HeaderTab({ children, active, onClick, reverse }: {
                 )} />
             )}
             <button
-                className={`py-3 px-8 ${active ? 'bg-c-primary ' + (reverse ? 'rounded-tl-xl' : 'rounded-tr-xl') : ''}`}
+                className={`py-3 px-8 whitespace-nowrap ${active ? 'bg-c-primary ' + (reverse ? 'rounded-tl-xl' : 'rounded-tr-xl') : ''}`}
                 onClick={onClick}
             >
                 {children}
