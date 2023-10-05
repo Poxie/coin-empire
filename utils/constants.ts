@@ -1,0 +1,1 @@
+export const MONEY_PER_COIN = 0.7;

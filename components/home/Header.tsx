@@ -4,6 +4,9 @@ import HeaderImage from "./HeaderImage";
 import Input from "../input";
 import Button from "../button";
 import HeaderTabs from "./HeaderTabs";
+import HeaderContent from './HeaderContent';
+import BuyCoins from './BuyCoins';
+import SellCoins from './SellCoins';
 
 export type Tab = 'buy' | 'sell';
 export default function Header() {
@@ -17,38 +20,11 @@ export default function Header() {
                     type={type}
                     setType={setType}
                 />
-                <p className="pb-6 pt-2 text-center text-2xl font-semibold border-b-[2px] border-b-tertiary">
-                    Buy for $0.7 per coin
-                </p>
-                <div className="pt-4">
-                    <Input 
-                        placeholder={'Your CSGO Empire ID'}
-                        onChange={console.log}
-                        value={''}
-                    />
-                    <div className="pt-3 flex items-center gap-2">
-                        <Input 
-                            placeholder={'Coin amount'}
-                            onChange={console.log}
-                            value={''}
-                        />
-                        <span className="text-xl">
-                            =
-                        </span>
-                        <Input 
-                            placeholder={'Specify your amount'}
-                            onChange={console.log}
-                            value={''}
-                        />
-                    </div>
-                    <Button
-                        onClick={console.log}
-                        className="w-full mt-3"
-                        type={'default'}
-                    >
-                        Select an amount to buy
-                    </Button>
-                </div>
+                {type === 'buy' ? (
+                    <BuyCoins />
+                ) : (
+                    <SellCoins />
+                )}
             </div>
         </div>
     )
